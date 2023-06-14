@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RazorApp
+build_property.RootNamespace = RazorApp
+build_property.ProjectDir = /Users/harshalb/Projects/RazorApp/RazorApp/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/harshalb/Projects/RazorApp/RazorApp
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/DeleteEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvRGVsZXRlRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GetEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvR2V0RW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/UpdateEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvVXBkYXRlRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-eg97lerw5h

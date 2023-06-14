@@ -1,0 +1,15 @@
+@page
+@model RazorApp.Pages.Forms.UpdateEmployeeModel
+@{
+    ViewData["Title"] = "UpdateEmployee";
+}
+
+<h1>UpdateEmployee</h1>
+
+<form method="post">
+    <input type="number" asp-for="Employee.EmpId" />
+    <input type="text" asp-for="Employee.EmpName" />
+    <input type="text" asp-for="Employee.EmpCity" />
+    <input type="number" asp-for="Employee.EmpAge" />
+    <button type="submit">Submit</button>
+</form>

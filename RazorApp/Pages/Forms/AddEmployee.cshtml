@@ -1,0 +1,14 @@
+@page
+@model RazorApp.Pages.Forms.AddEmployeeModel
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+<h1>AddEmployee</h1>
+<form method="post">
+    <input type="number" asp-for="Employee.EmpId"/>
+    <input type="text" asp-for="Employee.EmpName"/>
+    <input type="text" asp-for="Employee.EmpCity"/>
+    <input type="number" asp-for="Employee.EmpAge"/>
+    <button type="submit">Submit</button>
+</form>
