@@ -1,14 +1,26 @@
 ﻿using Microsoft.Azure.Cosmos;
-var builder = WebApplication.CreateBuilder(args);
+using RazorApp.Services;
 
-// New instance of CosmosClient class
-using CosmosClient client = new(
-    accountEndpoint: Environment.GetEnvironmentVariable("https/://cosmos-acc.documents.azure.com:443/")!,
-    authKeyOrResourceToken: Environment.GetEnvironmentVariable("tzuchFmoUXSHkq2HXcBwsIBJPrlI3Evrt1QUK2yYnIkwPsHa930zfrsANbEZLyMi5DNQcKXVPYM5ACDb25EfwA==")
-);
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IEmployeeService>(options =>
+{
+    string url = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("URL");
+    string primaryKey = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("PrimaryKey");
+    string dbName = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("DatabaseName");
+    string containerName = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("ContainerName");
+    CosmosClient cosmosClient = new CosmosClient(
+        url,
+        primaryKey
+    );
+    return new EmployeeService(cosmosClient, dbName, containerName);
+});
 
 var app = builder.Build();
 
@@ -28,10 +40,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
-// Database reference with creation if it does not already exist
-Database database = client.GetDatabase(id: "Employees");
-
-Console.WriteLine($"New database:\t{database.Id}");
 
 app.Run();

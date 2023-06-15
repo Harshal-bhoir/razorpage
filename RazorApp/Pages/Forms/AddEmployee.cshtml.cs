@@ -4,26 +4,34 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorApp.Services;
 
 using RazorApp.Models;
 
-namespace RazorApp.Pages.Forms
+namespace RazorApp.Pages.Forms;
+
+public class AddEmployeeModel : PageModel
 {
-    public class AddEmployeeModel : PageModel
+    public readonly IEmployeeService _employeeService;
+    public AddEmployeeModel(IEmployeeService employeeService)
     {
-        [BindProperty]
-        public EmployeeModel Employee { get; set; }
+        _employeeService = employeeService;
+    }
 
-        public void OnGet()
-        {
 
-        }
+    [BindProperty]
+    public EmployeeModel Employee { get; set; }
 
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid) return Page();
+    public void OnGet()
+    {
 
-            return RedirectToPage("/Index");
-        }
+    }
+
+    public async Task<IActionResult> OnPost()
+    {
+        if (!ModelState.IsValid) RedirectToPage("/Index");
+        Employee.Id = Guid.NewGuid().ToString();
+        var result = await _employeeService.AddAsync(Employee);
+        return RedirectToPage("/Index");
     }
 }
