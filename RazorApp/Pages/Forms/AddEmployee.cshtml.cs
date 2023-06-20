@@ -18,7 +18,6 @@ public class AddEmployeeModel : PageModel
         _employeeService = employeeService;
     }
 
-
     [BindProperty]
     public EmployeeModel Employee { get; set; }
 

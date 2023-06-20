@@ -262,3 +262,6 @@
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/runtimes/win-x64/native/msvcp140.dll
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/runtimes/win-x64/native/vcruntime140.dll
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/runtimes/win-x64/native/vcruntime140_1.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Azure.Storage.Blobs.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Azure.Storage.Common.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/System.IO.Hashing.dll

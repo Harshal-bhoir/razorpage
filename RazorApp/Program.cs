@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 using RazorApp.Services;
+using Azure.Storage.Blobs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,15 @@ builder.Services.AddSingleton<IEmployeeService>(options =>
         primaryKey
     );
     return new EmployeeService(cosmosClient, dbName, containerName);
+});
+
+builder.Services.AddSingleton<IAzBlobService>(options =>
+{
+    string connString = builder.Configuration.GetSection("AzureStorageSettings")
+    .GetValue<string>("ConnString");
+    BlobServiceClient blobServiceClient = new BlobServiceClient(connString);
+    BlobContainerClient blobContainerClient = blobServiceClient.GetBlobContainerClient("images");
+    return new AzBlobService(blobServiceClient, blobContainerClient);
 });
 
 var app = builder.Build();

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rqTfttF/SQRGdIpuQGSjS0vmA9ei+dKSs50RYQxflYooqBnEpsu1/clemzA66Zd7UAEbOBcZPKZPzFEw0mUHVA==",
+  "dgSpecHash": "64ZG+y+MjwOvuswDymW7IqLYWWhKp+Dp918ONyxn9hKb9T96jA3sSf3dUu0Oq+daJRfY65EpXCS4KfFJ6QFzww==",
   "success": true,
   "projectFilePath": "/Users/harshalb/Projects/RazorApp/RazorApp/RazorApp.csproj",
   "expectedPackageFiles": [
-    "/Users/harshalb/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
+    "/Users/harshalb/.nuget/packages/azure.core/1.31.0/azure.core.1.31.0.nupkg.sha512",
+    "/Users/harshalb/.nuget/packages/azure.storage.blobs/12.16.0/azure.storage.blobs.12.16.0.nupkg.sha512",
+    "/Users/harshalb/.nuget/packages/azure.storage.common/12.15.0/azure.storage.common.12.15.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/humanizer.core/2.2.0/humanizer.core.2.2.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
@@ -103,6 +105,7 @@
     "/Users/harshalb/.nuget/packages/system.io.compression.zipfile/4.3.0/system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/system.io.filesystem/4.3.0/system.io.filesystem.4.3.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/system.io.filesystem.primitives/4.3.0/system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "/Users/harshalb/.nuget/packages/system.io.hashing/6.0.0/system.io.hashing.6.0.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/system.linq/4.3.0/system.linq.4.3.0.nupkg.sha512",
     "/Users/harshalb/.nuget/packages/system.linq.expressions/4.3.0/system.linq.expressions.4.3.0.nupkg.sha512",
