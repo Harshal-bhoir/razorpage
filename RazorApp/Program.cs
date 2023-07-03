@@ -1,26 +1,47 @@
-﻿using Microsoft.Azure.Cosmos;
+﻿using Microsoft.Extensions.Logging.ApplicationInsights;
+using Microsoft.Azure.Cosmos;
 using RazorApp.Services;
 using Azure.Storage.Blobs;
+using Azure.Identity;
+using Microsoft.Extensions.Configuration.AzureKeyVault;
+using Azure.Security.KeyVault.Secrets;
 
 var builder = WebApplication.CreateBuilder(args);
 
+ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+{
+    builder.AddConsole();
+    builder.AddDebug();
+});
+
+builder.Services.AddApplicationInsightsTelemetry(builder.Configuration.GetSection("ApplicationInsights").GetValue<string>("InstrumentationKey"));
+
 // Add services to the container.
 builder.Services.AddRazorPages();
+
 builder.Services.AddSingleton<IEmployeeService>(options =>
 {
-    string url = builder.Configuration.GetSection("AzureCosmosDbSettings")
-    .GetValue<string>("URL");
-    string primaryKey = builder.Configuration.GetSection("AzureCosmosDbSettings")
-    .GetValue<string>("PrimaryKey");
+    var keyVaultUrl = builder.Configuration.GetSection("KeyVault:KeyVaultUrl");
+    var keyVaultClientId = builder.Configuration.GetSection("KeyVault:ClientId");
+    var keyVaultSecret = builder.Configuration.GetSection("KeyVault:ClientSecret");
+    var keyVaultDirectoryId = builder.Configuration.GetSection("KeyVault:DirectoryId");
+
+    var credentials = new ClientSecretCredential(keyVaultDirectoryId.Value.ToString(), keyVaultClientId.Value!.ToString(), keyVaultSecret.Value!.ToString());
+    builder.Configuration.AddAzureKeyVault(keyVaultUrl.Value!.ToString(), keyVaultClientId.Value!.ToString(), keyVaultSecret.Value!.ToString(), new DefaultKeyVaultSecretManager());
+    var client = new SecretClient(new Uri(keyVaultUrl.Value!.ToString()), credentials);
+
+    string connString = client.GetSecret("CosmosConn").Value.Value.ToString();
+
     string dbName = builder.Configuration.GetSection("AzureCosmosDbSettings")
     .GetValue<string>("DatabaseName");
     string containerName = builder.Configuration.GetSection("AzureCosmosDbSettings")
     .GetValue<string>("ContainerName");
+
     CosmosClient cosmosClient = new CosmosClient(
-        url,
-        primaryKey
+        connString
     );
-    return new EmployeeService(cosmosClient, dbName, containerName);
+    ILogger<EmployeeService> logger = loggerFactory.CreateLogger<EmployeeService>();
+    return new EmployeeService(cosmosClient, dbName, containerName, logger);
 });
 
 builder.Services.AddSingleton<IAzBlobService>(options =>

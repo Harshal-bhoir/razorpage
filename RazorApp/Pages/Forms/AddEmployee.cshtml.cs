@@ -30,7 +30,14 @@ public class AddEmployeeModel : PageModel
     {
         if (!ModelState.IsValid) RedirectToPage("/Index");
         Employee.Id = Guid.NewGuid().ToString();
-        var result = await _employeeService.AddAsync(Employee);
+        try
+        {
+            var result = await _employeeService.AddAsync(Employee);
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Exception occured at POST method to CosmosDB " + e.StackTrace);
+        }
         return RedirectToPage("/Index");
     }
 }

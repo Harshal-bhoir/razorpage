@@ -29,7 +29,14 @@ namespace RazorApp.Pages.Forms
         public async Task<IActionResult> OnPost()
         {
             //if (!ModelState.IsValid) return Page();
-            await _employeeService.Delete(Employee.EmpId.ToString());
+            try
+            {
+                await _employeeService.Delete(Employee.EmpId.ToString());
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Exception occured on Delete Employee POST Request " + e.StackTrace);
+            }
             return RedirectToPage("/Index");
         }
     }

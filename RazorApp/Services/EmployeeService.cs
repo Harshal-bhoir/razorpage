@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.ConstrainedExecution;
 using Microsoft.Azure.Cosmos;
+using Microsoft.Extensions.Logging;
 using RazorApp.Models;
 using RazorApp.Services;
 
@@ -9,17 +10,21 @@ namespace RazorApp.Services;
 	public class EmployeeService: IEmployeeService
 	{
     private readonly Container _container;
+    private readonly ILogger _logger;
+
+    public EmployeeService() { }
+
     public EmployeeService(CosmosClient cosmosClient,
     string databaseName,
-    string containerName)
+    string containerName, ILogger<EmployeeService> logger)
     {
         _container = cosmosClient.GetContainer(databaseName, containerName);
+        _logger = logger;
     }
 
     public async Task<List<EmployeeModel>> Get(string sqlCosmosQuery)
     {
-        FeedIterator<EmployeeModel> query = _container.GetItemQueryIterator<EmployeeModel>(new QueryDefinition(sqlCosmosQuery));
-
+        FeedIterator<EmployeeModel> query = _container.GetItemQueryIterator<EmployeeModel>(new QueryDefinition(sqlCosmosQuery));      
         return await GetResult(query);
     }
 

@@ -29,8 +29,14 @@ namespace RazorApp.Pages.Forms
         public async Task<IActionResult> OnPost()
         {
             //if (!ModelState.IsValid) return Page();
-
-            await _employeeService.Update(Employee);
+            try
+            {
+                await _employeeService.Update(Employee);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Exception occured on PUT method to CosmosDB " + e.StackTrace);
+            }
             return RedirectToPage("/Index");
         }
     }
