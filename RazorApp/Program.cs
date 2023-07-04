@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Logging.ApplicationInsights;
+﻿using RazorApp.CustomMiddlewares;
 using Microsoft.Azure.Cosmos;
 using RazorApp.Services;
 using Azure.Storage.Blobs;
 using Azure.Identity;
 using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Azure.Security.KeyVault.Secrets;
+using RazorApp.EnvConfig;
+using RazorApp.EnvConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +16,11 @@ ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
     builder.AddDebug();
 });
 
-builder.Services.AddApplicationInsightsTelemetry(builder.Configuration.GetSection("ApplicationInsights").GetValue<string>("InstrumentationKey"));
+builder.Services.AddApplicationInsightsTelemetry();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddTransient<IAppConfig, AppConfig>();
 builder.Services.AddSingleton<IEmployeeService>(options =>
 {
     var keyVaultUrl = builder.Configuration.GetSection("KeyVault:KeyVaultUrl");
@@ -54,6 +56,7 @@ builder.Services.AddSingleton<IAzBlobService>(options =>
 });
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

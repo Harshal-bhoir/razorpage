@@ -23,15 +23,12 @@ namespace RazorApp.Pages.Forms
         public async Task<IActionResult> OnGet()
         {
             var sqlCosmosQuery = "Select * from c";
-            List<EmployeeModel> result;
-            try
-            {
-                result = await _employeeService.Get(sqlCosmosQuery);
-            }
-            catch(Exception e)
-            {
-                throw new Exception("Exception thrown on GET method to CosmosDB " + e.StackTrace);
-            }
+            List<EmployeeModel> result = await _employeeService.Get(sqlCosmosQuery);
+            throw new Exception("Exception thrown by harshal");
+            //if(result.Count < 1)
+            //{
+            //    throw new Exception("Exception thrown on GET method to CosmosDB ");
+            //}
             Employees = result;
             return Page();
         }

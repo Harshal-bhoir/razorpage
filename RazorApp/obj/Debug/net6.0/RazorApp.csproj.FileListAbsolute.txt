@@ -291,3 +291,7 @@
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Microsoft.IdentityModel.Clients.ActiveDirectory.dll
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Microsoft.Rest.ClientRuntime.dll
 /Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Microsoft.Rest.ClientRuntime.Azure.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Autofac.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Autofac.Extras.Moq.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Castle.Core.dll
+/Users/harshalb/Projects/RazorApp/RazorApp/bin/Debug/net6.0/Moq.dll

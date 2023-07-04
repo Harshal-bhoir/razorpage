@@ -24,7 +24,9 @@ namespace RazorApp.Services;
 
     public async Task<List<EmployeeModel>> Get(string sqlCosmosQuery)
     {
-        FeedIterator<EmployeeModel> query = _container.GetItemQueryIterator<EmployeeModel>(new QueryDefinition(sqlCosmosQuery));      
+        FeedIterator<EmployeeModel> query = _container.GetItemQueryIterator<EmployeeModel>(new QueryDefinition(sqlCosmosQuery));
+        _logger.LogWarning("Warning log");
+        
         return await GetResult(query);
     }
 
