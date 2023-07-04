@@ -24,7 +24,6 @@ namespace RazorApp.Pages.Forms
         {
             var sqlCosmosQuery = "Select * from c";
             List<EmployeeModel> result = await _employeeService.Get(sqlCosmosQuery);
-            throw new Exception("Exception thrown by harshal");
             //if(result.Count < 1)
             //{
             //    throw new Exception("Exception thrown on GET method to CosmosDB ");
