@@ -40,12 +40,16 @@ namespace RazorApp.CustomMiddlewares;
         var errorResponse = new ErrorDetails()
         {
             StatusCode = context.Response.StatusCode,
-            Message = "Internal server error"
+            Message = "Internal server error "+exception.StackTrace
         };
 
         
         switch (exception)
         {
+            case Microsoft.Azure.Cosmos.CosmosException:
+                errorResponse.StatusCode = 400;
+                errorResponse.Message = "CosmosDB Exception occured "+exception.Message;
+                break;
             case ApplicationException ex:
                 if (ex.Message.Contains("Invalid Token"))
                 {
@@ -56,6 +60,10 @@ namespace RazorApp.CustomMiddlewares;
                 response.StatusCode = (int)HttpStatusCode.BadRequest;
                 errorResponse.Message = ex.Message;
                 break;
+            case ArgumentException ex:
+                response.StatusCode = 400;
+                errorResponse.Message = "Bad/Invalid Argument received";
+                break;
             default:
                 response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 errorResponse.Message = "Internal server error!";
@@ -65,6 +73,7 @@ namespace RazorApp.CustomMiddlewares;
         _telemetry.TrackTrace(exception.StackTrace);
         var result = JsonSerializer.Serialize(errorResponse);
         await context.Response.WriteAsync(result);
+        throw new Exception("Exception thrown by harshal");
     }
 }
 

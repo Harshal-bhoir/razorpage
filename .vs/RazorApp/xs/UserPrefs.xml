@@ -1,40 +1,53 @@
 ﻿<Properties StartupConfiguration="{96562044-7C53-462A-A296-9A66A31A8E15}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.RazorApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RazorApp/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/harshalb/Projects/RazorApp/RazorApp/CustomMiddlewares/ExceptionHandlingMiddleware.cs" relfile="RazorApp/CustomMiddlewares/ExceptionHandlingMiddleware.cs" line="40" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="RazorApp/Pages/Forms/GetEmployee.cshtml.cs">
     <Files>
       <File FileName="RazorApp/Models/ImageUploadModel.cs" />
       <File FileName="RazorApp/Models/EmployeeModel.cs" />
-      <File FileName="RazorApp/Pages/Forms/UploadImage.cshtml" />
-      <File FileName="RazorApp/Pages/Forms/GetEmployee.cshtml.cs" />
+      <File FileName="RazorApp/appsettings.json" />
       <File FileName="RazorApp/Services/EmployeeService.cs" />
-      <File FileName="RazorappTests/UnitTest1.cs" Line="22" Column="28" />
-      <File FileName="RazorApp/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="RazorApp/Properties/launchSettings.json" Line="9" Column="5" />
+      <File FileName="RazorApp/CustomMiddlewares/ExceptionHandlingMiddleware.cs" />
+      <File FileName="RazorApp/Pages/Forms/GetEmployee.cshtml.cs" Line="27" Column="1" />
+      <File FileName="RazorApp/Properties/launchSettings.json" />
+      <File FileName="RazorApp/appsettings.Development.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="RazorApp" expanded="True">
+          <Node name="RazorApp">
             <Node name="RazorApp" expanded="True">
+              <Node name="CustomMiddlewares" expanded="True" />
+              <Node name="EnvConfig" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Forms" expanded="True">
+                  <Node name="EnvDisplayPage.cshtml" expanded="True" />
+                  <Node name="GetEmployee.cshtml" expanded="True">
+                    <Node name="GetEmployee.cshtml.cs" selected="True" />
+                  </Node>
+                </Node>
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" expanded="True" />
+                </Node>
+                <Node name="Error.cshtml" expanded="True" />
+                <Node name="Index.cshtml" expanded="True" />
               </Node>
+              <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="wwwroot" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
             </Node>
-            <Node name="RazorappTests" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.RazorappTests FirstBuild="True" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.RazorappTests FirstBuild="True" />
 </Properties>

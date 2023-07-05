@@ -22,7 +22,7 @@ namespace RazorApp.Pages.Forms
 
         public async Task<IActionResult> OnGet()
         {
-            var sqlCosmosQuery = "Select * from c";
+            var sqlCosmosQuery = "Select ** from c";
             List<EmployeeModel> result = await _employeeService.Get(sqlCosmosQuery);
             //if(result.Count < 1)
             //{
