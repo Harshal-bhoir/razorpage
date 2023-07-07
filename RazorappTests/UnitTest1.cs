@@ -1,13 +1,17 @@
 ﻿namespace RazorappTests;
-
-using Autofac.Extras.Moq;
 using RazorApp.Services;
 using RazorApp.Models;
+using Moq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Microsoft.Extensions.Logging;
 
 [TestClass]
 public class UnitTest1
 {
     private readonly EmployeeService _employeeService;
+    private readonly Mock<IContainer> container = new Mock<IContainer>();
+    private readonly Mock<ILogger> logger = new Mock<ILogger>();
 
     public UnitTest1()
     {
@@ -17,10 +21,12 @@ public class UnitTest1
     [TestMethod]
     public void TestGetEmployees()
     {
-        using(var mock = AutoMock.GetLoose())
+        List<EmployeeModel> empList = new List<EmployeeModel>()
         {
-            mock.Mock<IEmployeeService>()
-                .Setup(x => x.Get<EmployeeModel>("select * from c"));
-        }
+            
+        };
+        var empService = new Mock<IEmployeeService>();
+        empService.Setup(x => x.Get(It.IsAny<string>())).Returns(empList);
+
     }
 }

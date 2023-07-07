@@ -9,6 +9,6 @@ namespace RazorApp.Services;
         Task<List<EmployeeModel>> Get(string sqlCosmosQuery);
         Task<EmployeeModel> AddAsync(EmployeeModel newEmp);
         Task<EmployeeModel> Update(EmployeeModel empToUpdate);
-        Task Delete(string EmpId);
-    }
+    Task Delete(string EmpId);
+}
 
