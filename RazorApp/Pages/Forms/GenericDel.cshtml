@@ -1,0 +1,13 @@
+@page
+@model RazorApp.Pages.Forms.GenericDelModel
+@{
+    ViewData["Title"] = "GenericDel";
+}
+
+
+<h1>DeleteEmployee</h1>
+
+<form method="post">
+    <input type="number" asp-for="Employee.EmpId" />
+    <button type="submit">Delete</button>
+</form>

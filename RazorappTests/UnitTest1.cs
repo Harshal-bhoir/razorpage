@@ -26,7 +26,6 @@ public class UnitTest1
             
         };
         var empService = new Mock<IEmployeeService>();
-        empService.Setup(x => x.Get(It.IsAny<string>())).Returns(empList);
 
     }
 }

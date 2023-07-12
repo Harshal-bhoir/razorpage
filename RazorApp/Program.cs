@@ -6,7 +6,6 @@ using Azure.Identity;
 using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Azure.Security.KeyVault.Secrets;
 using RazorApp.EnvConfig;
-using RazorApp.EnvConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +43,31 @@ builder.Services.AddSingleton<IEmployeeService>(options =>
     );
     ILogger<EmployeeService> logger = loggerFactory.CreateLogger<EmployeeService>();
     return new EmployeeService(cosmosClient, dbName, containerName, logger);
+});
+
+builder.Services.AddSingleton<IGenericService>(options =>
+{
+    var keyVaultUrl = builder.Configuration.GetSection("KeyVault:KeyVaultUrl");
+    var keyVaultClientId = builder.Configuration.GetSection("KeyVault:ClientId");
+    var keyVaultSecret = builder.Configuration.GetSection("KeyVault:ClientSecret");
+    var keyVaultDirectoryId = builder.Configuration.GetSection("KeyVault:DirectoryId");
+
+    var credentials = new ClientSecretCredential(keyVaultDirectoryId.Value.ToString(), keyVaultClientId.Value!.ToString(), keyVaultSecret.Value!.ToString());
+    builder.Configuration.AddAzureKeyVault(keyVaultUrl.Value!.ToString(), keyVaultClientId.Value!.ToString(), keyVaultSecret.Value!.ToString(), new DefaultKeyVaultSecretManager());
+    var client = new SecretClient(new Uri(keyVaultUrl.Value!.ToString()), credentials);
+
+    string connString = client.GetSecret("CosmosConn").Value.Value.ToString();
+
+    string dbName = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("DatabaseName");
+    string containerName = builder.Configuration.GetSection("AzureCosmosDbSettings")
+    .GetValue<string>("ContainerName");
+
+    CosmosClient cosmosClient = new CosmosClient(
+        connString
+    );
+    ILogger<GenericService> logger = loggerFactory.CreateLogger<GenericService>();
+    return new GenericService(cosmosClient, dbName, containerName, logger);
 });
 
 builder.Services.AddSingleton<IAzBlobService>(options =>

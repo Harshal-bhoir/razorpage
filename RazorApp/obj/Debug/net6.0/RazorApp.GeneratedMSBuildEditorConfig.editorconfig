@@ -32,6 +32,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvRW52RGlzcGxheVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GenericAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvR2VuZXJpY0FkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GenericDel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvR2VuZXJpY0RlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GenericUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvR2VuZXJpY1VwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GetEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ybXMvR2V0RW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,45 +1,41 @@
 ﻿<Properties StartupConfiguration="{96562044-7C53-462A-A296-9A66A31A8E15}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.RazorApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.RazorappTests FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RazorApp/Services/EmployeeService.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RazorApp/Services/GenericService.cs">
     <Files>
-      <File FileName="RazorApp/Models/ImageUploadModel.cs" />
-      <File FileName="RazorApp/Services/EmployeeService.cs" Line="66" Column="1" />
-      <File FileName="RazorApp/Pages/Error.cshtml.cs" />
-      <File FileName="RazorApp/Pages/Error.cshtml" />
-      <File FileName="RazorApp/Program.cs" />
-      <File FileName="RazorappTests/Usings.cs" />
-      <File FileName="RazorappTests/UnitTest1.cs" Line="26" Column="13" />
-      <File FileName="RazorApp/Pages/Forms/GetEmployee.cshtml.cs" Line="26" Column="1" />
-      <File FileName="RazorApp/CustomMiddlewares/ExceptionHandlingMiddleware.cs" Line="1" Column="1" />
-      <File FileName="RazorApp/Pages/Forms/GetEmployee.cshtml" Line="1" Column="1" />
-      <File FileName="RazorApp/Services/IEmployeeService.cs" Line="12" Column="31" />
+      <File FileName="RazorApp/Services/EmployeeService.cs" Line="57" Column="6" />
+      <File FileName="RazorApp/Pages/Forms/GetEmployee.cshtml.cs" Line="1" Column="1" />
+      <File FileName="RazorApp/Program.cs" Line="71" Column="4" />
+      <File FileName="RazorApp/Pages/Forms/AddEmployee.cshtml" Line="7" Column="1" />
+      <File FileName="RazorApp/Pages/Forms/AddEmployee.cshtml.cs" Line="42" Column="6" />
+      <File FileName="RazorApp/Services/IGenericService.cs" Line="11" Column="72" />
+      <File FileName="RazorApp/Services/GenericService.cs" Line="68" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="RazorApp" expanded="True">
+          <Node name="RazorApp">
             <Node name="RazorApp">
               <Node name="Models" expanded="True" />
               <Node name="Pages">
-                <Node name="Forms">
-                  <Node name="GetEmployee.cshtml" expanded="True" />
+                <Node name="Forms" expanded="True">
+                  <Node name="AddEmployee.cshtml" expanded="True" />
+                  <Node name="GenericAdd.cshtml" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Services" expanded="True" />
-              <Node name="appsettings.json" selected="True" />
+              <Node name="Services" expanded="True">
+                <Node name="GenericService.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/harshalb/Projects/RazorApp/RazorApp/Pages/Forms/GetEmployee.cshtml.cs" relfile="RazorApp/Pages/Forms/GetEmployee.cshtml.cs" line="23" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
