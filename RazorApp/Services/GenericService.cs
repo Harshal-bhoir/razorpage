@@ -50,12 +50,11 @@ namespace RazorApp.Services
                 if (property.Name == "Id")
                 {
                     cosmosGuid = type.GetProperty(property.Name).GetValue(res[0], null).ToString();
-                    dataToUpdate.GetType().GetProperty("Id").SetValue("Id", cosmosGuid);
+                    dataToUpdate.GetType().GetProperty("Id").SetValue("id", cosmosGuid);
+                    break;
                 }
             }
-            //res[0].EmpDepartment = dataToUpdate.EmpDepartment;
-            //res[0].EmpLastName = dataToUpdate.EmpLastName;
-            //res[0].EmpName = dataToUpdate.EmpName;
+       
             ItemResponse<T> item = await _container.UpsertItemAsync<T>(dataToUpdate, new PartitionKey(id));
             return item;
         }
@@ -72,6 +71,7 @@ namespace RazorApp.Services
                 if (property.Name == "Id")
                 {
                    idDel = type.GetProperty(property.Name).GetValue(res[0], null).ToString();
+                   break;
               
                 }
             }
